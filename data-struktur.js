@@ -110,7 +110,7 @@ const RND_DATA = {
                         jabatan: { id: "ANGGOTA BIDANG 1", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang1/Inna.jpg",
                         instagram: "https://www.instagram.com/theannaliebe?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: "https://www.linkedin.com/in/inna-lutfiah-fatih"
                     }
                 ]
             },
@@ -140,7 +140,7 @@ const RND_DATA = {
                         jabatan: { id: "ANGGOTA BIDANG 2", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang2/Fatih.jpg",
                         instagram: "https://www.instagram.com/alfatihhhg?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: " https://www.linkedin.com/in/muhammad-al-fatih-621596276?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                     }
                 ]
             },
@@ -161,7 +161,7 @@ const RND_DATA = {
                         jabatan: { id: "ANGGOTA BIDANG 3", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang3/Soja.jpg",
                         instagram: "https://www.instagram.com/moonsojaa?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: "https://www.linkedin.com/in/soja-purnamasari"
                     }
                 ]
             },
