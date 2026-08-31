@@ -8,7 +8,7 @@ const RND_DATA = {
     // ---------------------------------------------------------------------
     // 1. LINK GRUP WHATSAPP PENDAFTAR BARU
     // ---------------------------------------------------------------------
-    whatsappGroupUrl: "https://chat.whatsapp.com/GantiDenganLinkGrupKamu",
+    whatsappGroupUrl: "https://chat.whatsapp.com/BeigAmpoN7bGRr8LxnLx50",
 
     // ---------------------------------------------------------------------
     // 2. BACKGROUND FOTO HERO / CAROUSEL 
