@@ -7,7 +7,7 @@
 // =========================================================================
 // CONFIG: GOOGLE APPS SCRIPT URL (PASTE LINK DEPLOYMENT DISINI)
 // =========================================================================
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxyIHZL1g8ew3wlPfnLRCQ-Ny6vv4a4tvNHezyPxW3lMvAiW63bjtFugsybNUM7pBxHxA/exec"; 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxyIHZL1g8ew3wlPfnLRCQ-Ny6vv4a4tvNHezyPxW3lMvAiW63bjtFugsybNUM7pBxHxA/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
     initNavbar();
@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCachedCMSData();
     renderDynamicTabs();
     initTabSwitcher();
+    initCardSliders();
     initRegistrationModal();
+    initProfileModals();
     fetchDynamicDataFromSheets();
 });
 
@@ -26,42 +28,45 @@ document.addEventListener("DOMContentLoaded", () => {
 const translations = {
     id: {
         nav_brand_sub: "KELUARGA MAHASISWA UNIVERSITAS PANCASILA",
-        nav_home: "Beranda",
         nav_profile: "Profil",
         nav_struktur: "Kepengurusan",
         nav_kegiatan: "Kegiatan",
         btn_nav_register: "Pendaftaran",
-        
-        drawer_home: "Research & Development",
+
         drawer_profile: "Profil & Visi Misi",
         drawer_struktur: "Struktur Organisasi",
-        drawer_kegiatan: "Jurnal, Proker, & Projek",
+        drawer_kegiatan: "Kegiatan & Hasil Karya",
         btn_drawer_register: "Pendaftaran",
 
-        hero_badge: "Selamat Datang di Website UKM R&D KMUP",
         hero_desc: "Wadah kolaborasi eksplorasi ilmiah, rekayasa teknologi, dan pengembangan inovasi mahasiswa yang solutif, unggul, serta berdaya saing global.",
         btn_hero_join: "@rnd_pancasila",
-        btn_hero_profile: "Pelajari Profil Kami",
+        btn_hero_linkedin: "UKM R&D KMUP",
+        btn_hero_profile: "UKM R&D KMUP",
 
-        profile_badge: "Profil Organisasi",
+        profile_badge: "Profil Kami",
         profile_title: "Mengenal UKM R&D KMUP",
         profile_subtitle: "Membangun ekosistem riset yang berintegritas dan menghasilkan karya nyata bagi almamater dan masyarakat.",
         about_title: "Tentang UKM R&D",
-        about_desc_1: "Unit Kegiatan Mahasiswa Research & Development (R&D) Keluarga Mahasiswa Universitas Pancasila adalah organisasi kemahasiswaan independen yang berfokus pada penalaran ilmiah, penelitian interdisipliner, serta pengembangan produk teknologi dan sosial.",
-        about_desc_2: "Kami memfasilitasi mahasiswa dari berbagai fakultas untuk mengasah keahlian teknis, kepemimpinan proyek, dan publikasi karya ilmiah yang bermanfaat.",
+        about_desc_preview: "UKM bidang penelitian multidisiplin ilmu yang tanggap kemajuan teknologi, solutif bagi problematika sosial, dan aktif di event nasional & internasional.",
+        btn_read_more: "Baca Selengkapnya",
+        about_desc_1: "Unit Kegiatan Mahasiswa Research and Development Keluarga Mahasiswa Universitas Pancasila atau disingkat UKM R&D KMUP adalah UKM yang bergerak di bidang penelitian. UKM R&D ini berdiri atas dasar sekelompok mahasiswa yang ingin mengembangkan keilmuannya yang terdiri dari keberagaman disiplin ilmu dengan mengikuti segala event nasional dan internasional.",
+        about_desc_2: "UKM R&D ini memiliki visi sebagai wadah riset keilmuan yang tanggap kemajuan teknologi dan peka terhadap problematika sosial masyarakat sehingga mampu memberikan solusi nyata dengan mengaitkan pada aplikasi-aplikasi teknologi yang efektif dan efisien. Untuk mencapai tujuan tersebut, UKM R&D memiliki misi menjadi tempat pengembangan intelektualitas mahasiswa dalam penelitian, pembuatan, dan penerapan teknologi yang berpedoman Tri Dharma Perguruan Tinggi. Selain itu, UKM R&D juga memiliki misi sebagai media penerapan bidang-bidang keilmuan dengan menyelaraskan pada teori yang diperoleh saat kuliah, dan masih banyak lagi.",
         vm_title: "Visi & Misi",
+        visi_desc_preview: "Mewujudkan wadah inovasi yang progresif, kolaboratif, dan berdampak dengan mencetak anggota yang kompeten.",
+        btn_view_vm: "Lihat Visi & Misi",
+        btn_close: "Tutup Jendela",
         visi_label: "Visi:",
-        visi_text: "<strong>Visi:</strong> Mewujudkan <span>Research and Development KMUP</span> sebagai wadah <span>inovasi</span> yang <span>progresif</span>, <span>kolaboratif</span>, dan <span>berdampak</span>, dengan mencetak anggota yang <span>kompeten</span> di bidang <span>teknologi</span>, <span>riset</span>, dan <span>pengembangan diri</span>.",
+        visi_text: "Mewujudkan <span>Research and Development KMUP</span> sebagai wadah <span>inovasi</span> yang <span>progresif</span>, <span>kolaboratif</span>, dan <span>berdampak</span>, dengan mencetak anggota yang <span>kompeten</span> di bidang <span>teknologi</span>, <span>riset</span>, dan <span>pengembangan diri</span>.",
         misi_1: '<i class="fas fa-check-circle"></i> Mengembangkan personal branding anggota dengan memberikan kelas mingguan dan mengikutsertakan anggota dalam lomba-lomba inovatif.',
         misi_2: '<i class="fas fa-check-circle"></i> Mendorong inovasi dan karya nyata, serta menghasilkan proyek teknologi, riset, atau produk digital.',
         misi_3: '<i class="fas fa-check-circle"></i> Memperluas relasi dan peluang, membantu anggota memiliki portofolio yang jelas dan bernilai, serta menjalin kerja sama dengan pihak luar.',
 
         structure_badge: "Kepengurusan",
-        structure_title: "Struktur Organisasi",
+        structure_title: "Struktur Organisasi Periode 2025/2026",
         structure_subtitle: "Badan pengurus dan koordinator bidang yang berdedikasi menjalankan Program Kerja untuk mencapai tujuan Visi & Misi.",
 
-        tabs_badge: "Eksplorasi Karya",
-        tabs_title: "Jurnal, Proker & Projek",
+        tabs_badge: "Eksplorasi R&D KMUP",
+        tabs_title: "Kegiatan & Hasil Karya",
         tabs_subtitle: "Jelajahi publikasi ilmiah, program kerja berjalan, dan hasil riset teknologi UKM R&D.",
         tab_jurnal: "Jurnal Ilmiah",
         tab_proker: "Program Kerja",
@@ -74,16 +79,21 @@ const translations = {
 
         modal_tag: "Form Pendaftaran Anggota Baru",
         form_nama: "Nama Lengkap",
+        ph_nama: "Masukkan nama lengkap",
+        ph_npm: "Contoh: 4527210025",
         form_fakultas: "Fakultas",
         opt_select_fakultas: "Pilih Fakultas",
         form_prodi: "Program Studi",
+        opt_select_prodi: "-- Pilih Program Studi --",
         form_wa: "Nomor WhatsApp",
+        ph_wa: "Contoh: 081234567890",
         btn_next: "Lanjut",
+        btn_processing: "Memproses Data...",
         success_title: "Terima Kasih!",
         success_desc: "Data pendaftaranmu berhasil tersimpan. Silakan klik tombol di bawah untuk bergabung ke WhatsApp Group resmi calon anggota UKM R&D.",
         btn_join_wa: "Masuk Link Grup WA",
 
-        footer_desc: "Unit Kegiatan Mahasiswa Research & Development KM Universitas Pancasila. Membina generasi muda berdaya saing dalam riset dan teknologi.",
+        footer_desc: "Unit Kegiatan Mahasiswa Research & Development Universitas Pancasila. Membina generasi muda berdaya saing dalam riset dan teknologi.",
         footer_nav_heading: "Navigasi",
         footer_act_heading: "Aktivitas",
         footer_contact_heading: "Sekretariat",
@@ -91,42 +101,45 @@ const translations = {
     },
     en: {
         nav_brand_sub: "STUDENT FAMILY OF PANCASILA UNIVERSITY",
-        nav_home: "Home",
         nav_profile: "Profile",
         nav_struktur: "Management",
         nav_kegiatan: "Activities",
         btn_nav_register: "Registration",
-        
-        drawer_home: "Research & Development",
+
         drawer_profile: "Profile & Vision Mission",
         drawer_struktur: "Organizational Structure",
-        drawer_kegiatan: "Journals, Programs, & Projects",
+        drawer_kegiatan: "Activities & Work Result",
         btn_drawer_register: "Registration",
 
-        hero_badge: "Welcome to UKM R&D KMUP Official Website",
         hero_desc: "A collaborative hub for scientific exploration, technological engineering, and student innovation that is impactful, excellent, and globally competitive.",
         btn_hero_join: "@rnd_pancasila",
-        btn_hero_profile: "Explore Our Profile",
+        btn_hero_linkedin: "UKM R&D KMUP",
+        btn_hero_profile: "UKM R&D KMUP",
 
-        profile_badge: "Organization Profile",
+        profile_badge: "Our Profile",
         profile_title: "Get to Know UKM R&D KMUP",
         profile_subtitle: "Building an upright research ecosystem and delivering real impact for the university and society.",
         about_title: "About UKM R&D",
-        about_desc_1: "The Research & Development (R&D) Student Club of Pancasila University is an independent student organization focused on scientific reasoning, interdisciplinary research, and technological/social innovation.",
-        about_desc_2: "We facilitate students across faculties to enhance technical skills, project management capabilities, and valuable scientific publications.",
+        about_desc_preview: "An interdisciplinary research unit advancing technological innovation, solving social challenges, and excelling in national & international events.",
+        btn_read_more: "Read Details",
+        about_desc_1: "The Research and Development Student Club of Pancasila University (UKM R&D KMUP) is a student activity unit engaged in scientific research. UKM R&D was founded by students dedicated to advancing interdisciplinary knowledge and participating in national and international events.",
+        about_desc_2: "UKM R&D aims to be a scientific research platform that responds to technological advancements and social challenges, providing tangible, effective, and efficient tech-driven solutions guided by the Tri Dharma of Higher Education, while applying academic theory to real-world impact.",
         vm_title: "Vision & Mission",
+        visi_desc_preview: "Establishing an innovation hub that is progressive, collaborative, and impactful by developing competent members.",
+        btn_view_vm: "View Vision & Mission",
+        btn_close: "Close Window",
         visi_label: "Vision:",
-        visi_text: "<strong>Vision:</strong> Establishing <span>Research and Development KMUP</span> as an <span>innovation</span> hub that is <span>progressive</span>, <span>collaborative</span>, and <span>impactful</span>, by developing members who are <span>competent</span> in <span>technology</span>, <span>research</span>, and <span>self-development</span>.",
+        visi_text: "Establishing <span>Research and Development KMUP</span> as an <span>innovation</span> hub that is <span>progressive</span>, <span>collaborative</span>, and <span>impactful</span>, by developing members who are <span>competent</span> in <span>technology</span>, <span>research</span>, and <span>self-development</span>.",
         misi_1: '<i class="fas fa-check-circle"></i> Developing member personal branding through weekly classes and active participation in innovation competitions.',
         misi_2: '<i class="fas fa-check-circle"></i> Fostering tangible innovation through technology projects, scientific research, or digital products.',
         misi_3: '<i class="fas fa-check-circle"></i> Expanding external networks and opportunities, helping members build a clear and valuable portfolio, and establishing partnerships.',
 
         structure_badge: "Management",
-        structure_title: "Organizational Structure",
+        structure_title: "Organizational Structure 2025/2026",
         structure_subtitle: "The executive board and department heads dedicated to executing work programs towards our Vision & Mission.",
 
-        tabs_badge: "Our Works",
-        tabs_title: "Journals, Programs & Projects",
+        tabs_badge: "Explore R&D KMUP",
+        tabs_title: "Activities & Work Results",
         tabs_subtitle: "Explore scientific publications, ongoing work programs, and tech research results from UKM R&D.",
         tab_jurnal: "Scientific Journals",
         tab_proker: "Work Programs",
@@ -139,11 +152,16 @@ const translations = {
 
         modal_tag: "New Member Registration Form",
         form_nama: "Full Name",
+        ph_nama: "Enter full name",
+        ph_npm: "e.g. 4527210025",
         form_fakultas: "Faculty",
         opt_select_fakultas: "Select Faculty",
         form_prodi: "Study Program",
+        opt_select_prodi: "-- Select Study Program --",
         form_wa: "WhatsApp Number",
+        ph_wa: "e.g. 081234567890",
         btn_next: "Next",
+        btn_processing: "Processing Data...",
         success_title: "Thank You!",
         success_desc: "Your registration data has been submitted successfully. Please click the button below to join our official WhatsApp Group for new members.",
         btn_join_wa: "Join WhatsApp Group",
@@ -164,7 +182,19 @@ function setLanguage(lang) {
     document.querySelectorAll("[data-lang-key]").forEach(element => {
         const key = element.getAttribute("data-lang-key");
         if (translations[lang] && translations[lang][key]) {
-            element.innerHTML = translations[lang][key];
+            if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+                element.value = translations[lang][key];
+            } else {
+                element.innerHTML = translations[lang][key];
+            }
+        }
+    });
+
+    // 1b. Ganti semua placeholder elemen yang memiliki atribut data-lang-placeholder
+    document.querySelectorAll("[data-lang-placeholder]").forEach(element => {
+        const key = element.getAttribute("data-lang-placeholder");
+        if (translations[lang] && translations[lang][key]) {
+            element.setAttribute("placeholder", translations[lang][key]);
         }
     });
 
@@ -180,6 +210,7 @@ function setLanguage(lang) {
     // 4. Render ulang elemen dinamis agar teks bilingual terupdate
     if (typeof renderStructureMembers === "function") renderStructureMembers(lang);
     if (typeof renderDynamicTabs === "function") renderDynamicTabs(lang);
+    if (typeof window.updateProdiOptions === "function") window.updateProdiOptions();
 }
 
 // ==========================================================================
@@ -270,13 +301,13 @@ function initHeroCarousel() {
     backgrounds.forEach((bg, index) => {
         const slide = document.createElement("div");
         slide.className = `hero-slide ${index === 0 ? "active" : ""}`;
-        
+
         const desktopUrl = bg.url || "";
         const mobileUrl = bg.mobileurl || bg.mobileUrl || bg.url || "";
 
         slide.style.setProperty('--bg-desktop', `url('${desktopUrl}')`);
         slide.style.setProperty('--bg-mobile', `url('${mobileUrl}')`);
-        
+
         sliderContainer.appendChild(slide);
     });
 
@@ -302,15 +333,6 @@ function getText(value, lang = "id") {
     }
     return value;
 }
-
-backgrounds.forEach((bg, index) => {
-    const slide = document.createElement("div");
-    slide.className = `hero-slide ${index === 0 ? "active" : ""}`;
-    slide.style.setProperty('--bg-desktop', `url('${bg.url}')`);
-    slide.style.setProperty('--bg-mobile', `url('${bg.mobileUrl || bg.url}')`);
-    sliderContainer.appendChild(slide);
-});
-
 
 /* -------------------------------------------------------------------------
    3. RENDER STRUKTUR ORGANISASI
@@ -399,7 +421,7 @@ function loadCachedCMSData() {
 function formatDateText(dateVal, lang = "id") {
     if (!dateVal) return "";
     let str = typeof dateVal === "object" ? getText(dateVal, lang) : String(dateVal).trim();
-    
+
     // Jika format ISO timestamp: 2026-09-09T17:00:00.000Z atau YYYY-MM-DD
     if (/^\d{4}-\d{2}-\d{2}/.test(str)) {
         try {
@@ -408,7 +430,7 @@ function formatDateText(dateVal, lang = "id") {
                 const options = { day: 'numeric', month: 'long', year: 'numeric' };
                 return d.toLocaleDateString(lang === "id" ? 'id-ID' : 'en-US', options);
             }
-        } catch (e) {}
+        } catch (e) { }
     }
     return str;
 }
@@ -538,6 +560,11 @@ function renderDynamicTabs(lang = "id") {
             projectContainer.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px 0;"><i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-bottom: 10px; display: block;"></i> Memuat portofolio project...</div>`;
         }
     }
+
+    // Refresh Slider Listeners & Arrow States
+    if (typeof initCardSliders === "function") {
+        setTimeout(initCardSliders, 50);
+    }
 }
 
 /* -------------------------------------------------------------------------
@@ -572,7 +599,7 @@ async function fetchDynamicDataFromSheets() {
                 // Simpan ke cache browser agar saat buka web/refresh langsung muncul 0 detik!
                 try {
                     localStorage.setItem("RND_CMS_CACHE", JSON.stringify(data));
-                } catch (e) {}
+                } catch (e) { }
 
                 const activeLang = document.querySelector(".lang-btn.active")?.getAttribute("data-lang") || "id";
                 renderDynamicTabs(activeLang);
@@ -601,14 +628,121 @@ function initTabSwitcher() {
             const activePane = document.getElementById(`tab-${targetTab}`);
             if (activePane) {
                 activePane.classList.add("active");
+                // Update slider status pada tab yang baru dibuka
+                setTimeout(initCardSliders, 80);
             }
         });
     });
 }
 
 /* -------------------------------------------------------------------------
+   5B. CARDS SLIDER (HORIZONTAL SCROLL WITH ARROWS)
+   ------------------------------------------------------------------------- */
+function initCardSliders() {
+    const wrappers = document.querySelectorAll(".cards-slider-wrapper");
+
+    wrappers.forEach(wrapper => {
+        const prevBtn = wrapper.querySelector(".slider-prev-btn");
+        const nextBtn = wrapper.querySelector(".slider-next-btn");
+        const slider = wrapper.querySelector(".dynamic-cards-slider");
+
+        if (!slider || !prevBtn || !nextBtn) return;
+
+        const updateArrows = () => {
+            const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+            const isScrollable = maxScrollLeft > 10;
+
+            if (!isScrollable) {
+                prevBtn.style.display = "none";
+                nextBtn.style.display = "none";
+                return;
+            }
+
+            prevBtn.style.display = "flex";
+            nextBtn.style.display = "flex";
+            prevBtn.classList.toggle("disabled", slider.scrollLeft <= 5);
+            nextBtn.classList.toggle("disabled", slider.scrollLeft >= maxScrollLeft - 5);
+        };
+
+        const getScrollStep = () => {
+            const card = slider.querySelector(".dynamic-card");
+            if (card) {
+                return card.offsetWidth + 28;
+            }
+            return slider.clientWidth * 0.8;
+        };
+
+        prevBtn.onclick = (e) => {
+            e.preventDefault();
+            slider.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
+        };
+
+        nextBtn.onclick = (e) => {
+            e.preventDefault();
+            slider.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+        };
+
+        slider.addEventListener("scroll", updateArrows, { passive: true });
+        window.addEventListener("resize", updateArrows, { passive: true });
+
+        // Update state
+        updateArrows();
+        setTimeout(updateArrows, 150);
+    });
+}
+
+/* -------------------------------------------------------------------------
    6. 2-STEP REGISTRATION MODAL ("IMPROVE YOUR KNOWLEDGE")
    ------------------------------------------------------------------------- */
+const PRODI_BY_FAKULTAS = {
+    "teknik": [
+        "S1 - Arsitektur",
+        "S1 - Teknik Sipil",
+        "S1 - Teknik Mesin",
+         "S1 - Teknik Industri",
+        "S1 - Teknik Informatika",
+        "S1 - Teknik Elektro",
+        "S1 - Teknik Perkeretaapian",
+        "D3 - Teknik Mesin",
+        "D3 - Teknik Elektro"
+    ],
+    "farmasi": [
+        "S1 - Farmasi",
+        "D3 - Farmasi"
+    ],
+    "ekonomi": [
+        "S1 - Manajemen",
+        "S1 - Akuntansi",
+        "D3 - Akuntansi",
+        "D3 - Perpajakan"
+    ],
+    "hukum": [
+        "S1 - Ilmu Hukum"
+    ],
+    "komunikasi": [
+        "S1 - Ilmu Komunikasi"
+    ],
+    "psikologi": [
+        "S1 - Psikologi"
+    ],
+    "pariwisata": [
+        "S1 - Pariwisata"
+    ]
+};
+
+function getProdiList(facultyName) {
+    if (!facultyName) return [];
+    const lower = facultyName.toLowerCase();
+    if (lower.includes("teknik")) return PRODI_BY_FAKULTAS["teknik"];
+    if (lower.includes("farmasi")) return PRODI_BY_FAKULTAS["farmasi"];
+    if (lower.includes("ekonomi") || lower.includes("bisnis")) return PRODI_BY_FAKULTAS["ekonomi"];
+    if (lower.includes("hukum")) return PRODI_BY_FAKULTAS["hukum"];
+    if (lower.includes("komunikasi")) return PRODI_BY_FAKULTAS["komunikasi"];
+    if (lower.includes("psikologi")) return PRODI_BY_FAKULTAS["psikologi"];
+    if (lower.includes("pariwisata")) return PRODI_BY_FAKULTAS["pariwisata"];
+    return [];
+}
+
 function initRegistrationModal() {
     const modalOverlay = document.getElementById("registrationModal");
     const openBtns = document.querySelectorAll(".trigger-register-modal");
@@ -618,6 +752,50 @@ function initRegistrationModal() {
     const step2 = document.getElementById("modalStep2");
     const btnSubmit = document.getElementById("btnSubmitForm");
     const btnJoinWa = document.getElementById("btnJoinWaGroup");
+    const regFakultas = document.getElementById("regFakultas");
+    const regProdi = document.getElementById("regProdi");
+
+    // Dynamic Cascading Dropdown Prodi berdasarkan Fakultas
+    window.updateProdiOptions = function () {
+        const fakultasElem = document.getElementById("regFakultas");
+        const prodiElem = document.getElementById("regProdi");
+        if (!fakultasElem || !prodiElem) return;
+
+        const val = (fakultasElem.value || "").toLowerCase();
+        let targetKey = "";
+        if (val.includes("teknik")) targetKey = "teknik";
+        else if (val.includes("farmasi")) targetKey = "farmasi";
+        else if (val.includes("ekonomi") || val.includes("bisnis")) targetKey = "ekonomi";
+        else if (val.includes("hukum")) targetKey = "hukum";
+        else if (val.includes("komunikasi")) targetKey = "komunikasi";
+        else if (val.includes("psikologi")) targetKey = "psikologi";
+        else if (val.includes("pariwisata")) targetKey = "pariwisata";
+
+        const optgroups = prodiElem.querySelectorAll("optgroup");
+        if (optgroups && optgroups.length > 0) {
+            optgroups.forEach(og => {
+                const ogKey = og.getAttribute("data-fakultas");
+                if (!targetKey || ogKey === targetKey) {
+                    og.style.display = "";
+                    og.disabled = false;
+                } else {
+                    og.style.display = "none";
+                    og.disabled = true;
+                }
+            });
+
+            // Reset ke opsi pertama jika sebelumnya memilih prodi dari fakultas lain
+            const currentSelected = prodiElem.options[prodiElem.selectedIndex];
+            if (currentSelected && currentSelected.parentElement && currentSelected.parentElement.tagName === "OPTGROUP" && currentSelected.parentElement.style.display === "none") {
+                prodiElem.selectedIndex = 0;
+            }
+        }
+    };
+
+    if (regFakultas) {
+        regFakultas.addEventListener("change", window.updateProdiOptions);
+        regFakultas.addEventListener("input", window.updateProdiOptions);
+    }
 
     // Pasang Link WA dari data-struktur.js
     if (btnJoinWa && RND_DATA.whatsappGroupUrl) {
@@ -645,15 +823,24 @@ function initRegistrationModal() {
 
     // Reset Form to Step 1
     function resetModal() {
+        const activeLang = document.querySelector(".lang-btn.active")?.getAttribute("data-lang") || "id";
         step1.classList.add("active");
         step2.classList.remove("active");
         btnSubmit.disabled = false;
-        btnSubmit.innerHTML = `Lanjut <i class="fas fa-arrow-right"></i>`;
+        btnSubmit.innerHTML = `<span data-lang-key="btn_next">${activeLang === "en" ? "Next" : "Lanjut"}</span> <i class="fas fa-arrow-right"></i>`;
+        if (regFakultas) {
+            regFakultas.selectedIndex = 0;
+        }
+        if (typeof window.updateProdiOptions === "function") {
+            window.updateProdiOptions();
+        }
     }
 
     // Handle Form Submit
     regForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        const activeLang = document.querySelector(".lang-btn.active")?.getAttribute("data-lang") || "id";
 
         // Ambil Data Form
         const formData = {
@@ -667,13 +854,13 @@ function initRegistrationModal() {
 
         // Validasi Sederhana
         if (!formData.nama || !formData.npm || !formData.prodi || !formData.whatsapp) {
-            alert("Harap lengkapi semua kolom pendaftaran!");
+            alert(activeLang === "en" ? "Please fill in all registration fields!" : "Harap lengkapi semua kolom pendaftaran!");
             return;
         }
 
         // Loading State
         btnSubmit.disabled = true;
-        btnSubmit.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memproses Data...`;
+        btnSubmit.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${activeLang === "en" ? "Processing Data..." : "Memproses Data..."}`;
 
         try {
             // Jika link Google Apps Script sudah diisi, kirim ke database cloud
@@ -698,7 +885,7 @@ function initRegistrationModal() {
             regForm.reset();
         } catch (error) {
             console.error("Error submitting form:", error);
-            alert("Terjadi kendala koneksi, data tetap kami simpan di sesi kamu.");
+            alert(activeLang === "en" ? "Connection issue, data has been saved in your local session." : "Terjadi kendala koneksi, data tetap kami simpan di sesi kamu.");
             step1.classList.remove("active");
             step2.classList.add("active");
         } finally {
@@ -706,3 +893,61 @@ function initRegistrationModal() {
         }
     });
 }
+
+/* -------------------------------------------------------------------------
+   6B. PROFILE POPUP MODALS (TENTANG UKM & VISI MISI)
+   ------------------------------------------------------------------------- */
+function initProfileModals() {
+    const triggers = document.querySelectorAll(".profile-card-clickable");
+    const modals = document.querySelectorAll(".profile-popup-modal");
+    const closeBtns = document.querySelectorAll(".close-profile-modal");
+
+    // Open Modal on Card Click or Enter Key
+    triggers.forEach(card => {
+        const targetModalId = card.getAttribute("data-open-modal");
+        const targetModal = document.getElementById(targetModalId);
+
+        if (!targetModal) return;
+
+        const openHandler = (e) => {
+            e.preventDefault();
+            targetModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+
+        card.addEventListener("click", openHandler);
+        card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                openHandler(e);
+            }
+        });
+    });
+
+    // Close Modal on Close Button Click
+    closeBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            modals.forEach(m => m.classList.remove("open"));
+            document.body.style.overflow = "";
+        });
+    });
+
+    // Close Modal when clicking outside backdrop
+    modals.forEach(modal => {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("open");
+                document.body.style.overflow = "";
+            }
+        });
+    });
+
+    // Close Modal on ESC key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modals.forEach(m => m.classList.remove("open"));
+            document.body.style.overflow = "";
+        }
+    });
+}
+

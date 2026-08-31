@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research & Development (R&D)</title>
     <meta name="description" content="Portal Resmi UKM Research and Development (R&D) Keluarga Mahasiswa Universitas Pancasila. Riset, Inovasi, dan Pengembangan Teknologi Mahasiswa.">
-    
-    <!-- Google Fonts: Plus Jakarta Sans -->
+        
+    <link rel="icon" type="image/png" href="Gambar/LOGO-UKM-RDKMUP.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,10 +34,9 @@
 
             <!-- Desktop Links -->
             <nav class="nav-links">
-                <a href="#home" class="nav-item active" data-lang-key="nav_home">Beranda</a>
                 <a href="#profile" class="nav-item" data-lang-key="nav_profile">Profil</a>
-                <a href="#struktur" class="nav-item" data-lang-key="nav_struktur">Kepengurusan</a>
                 <a href="#kegiatan" class="nav-item" data-lang-key="nav_kegiatan">Kegiatan</a>
+                <a href="#struktur" class="nav-item" data-lang-key="nav_struktur">Kepengurusan</a>
                 
                 <!-- Tombol Switcher Bahasa Desktop -->
                 <div class="lang-switch">
@@ -61,10 +59,8 @@
         </div>
     </header>
 
-    <!-- Mobile Drawer Overlay & Sidebar -->
     <div class="drawer-overlay" id="drawerOverlay"></div>
     <div class="mobile-drawer" id="mobileDrawer">
-        <!-- Switcher Bahasa Mobile -->
         <div class="lang-switch" style="margin: 15px auto; width: fit-content;">
             <button type="button" class="lang-btn active" data-lang="id">ID</button>
             <span class="lang-divider">|</span>
@@ -72,17 +68,14 @@
         </div>
 
         <div class="drawer-links">
-            <a href="#home" class="drawer-item active">
-                <i class="fas fa-home"></i> <span data-lang-key="drawer_home">Research & Develop</span>
-            </a>
             <a href="#profile" class="drawer-item">
                 <i class="fas fa-info-circle"></i> <span data-lang-key="drawer_profile">Profil & Visi Misi</span>
             </a>
+            <a href="#kegiatan" class="drawer-item">
+                <i class="fas fa-layer-group"></i> <span data-lang-key="drawer_kegiatan">Kegiatan & Hasil Karya</span>
+            </a>
             <a href="#struktur" class="drawer-item">
                 <i class="fas fa-sitemap"></i> <span data-lang-key="drawer_struktur">Struktur Organisasi</span>
-            </a>
-            <a href="#kegiatan" class="drawer-item">
-                <i class="fas fa-layer-group"></i> <span data-lang-key="drawer_kegiatan">Jurnal, Proker, & Projek</span>
             </a>
             <a href="#daftar" class="btn-drawer-register trigger-register-modal">
                 <i class="fas fa-user-plus"></i> <span data-lang-key="btn_drawer_register">Pendaftaran</span>
@@ -102,12 +95,9 @@
         <div class="hero-overlay"></div>
 
         <div class="container hero-content">
-            <div class="hero-badge-tag">
-                <i class="fas fa-atom"></i> <span data-lang-key="hero_badge">Welcome To Our Website</span>
-            </div>
             <h1 class="hero-title">
                 RESEARCH &amp; <span class="highlight-red">DEVELOPMENT</span><br>
-                UNIVERSITAS PANCASILA
+                KMUP
             </h1>
             <p class="hero-desc" data-lang-key="hero_desc">
                 Wadah kolaborasi eksplorasi ilmiah, rekayasa teknologi, dan pengembangan inovasi mahasiswa yang solutif, unggul, serta berdaya saing global.
@@ -117,17 +107,16 @@
                     class="btn-primary" 
                     target="_blank" 
                     rel="noopener noreferrer">
-                        <span data-lang-key="btn_hero_join">@rnd_pancasila</span>
+                        <i class="fab fa-instagram"></i> <span data-lang-key="btn_hero_join">@rnd_pancasila</span>
                 </a>
-                <a href="#profile" class="btn-outline-white">
-                    <i class="fas fa-compass"></i> <span data-lang-key="btn_hero_profile">Pelajari Profil Kami</span>
+                <a href="https://www.linkedin.com/company/ukm-research-and-development-kmup/" 
+                    class="btn-linkedin" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> <span data-lang-key="btn_hero_linkedin">UKM R&amp;D KMUP</span>
                 </a>
             </div>
 
-            <!-- Carousel Slide Indicator Dots -->
-            <div class="hero-slider-indicators" id="heroIndicators">
-                <!-- Dots dirender otomatis oleh script.js -->
-            </div>
         </div>
     </section>
 
@@ -137,71 +126,39 @@
     <section class="section" id="profile">
         <div class="container">
             <div class="section-title-wrap">
-                <span class="section-badge" data-lang-key="profile_badge">Profil Organisasi</span>
+                <span class="section-badge" data-lang-key="profile_badge">Profil Kami</span>
                 <h2 class="section-title" data-lang-key="profile_title">Mengenal UKM R&amp;D KMUP</h2>
                 <p class="section-subtitle" data-lang-key="profile_subtitle">
-                    Membangun ekosistem riset yang berintegritas dan menghasilkan karya nyata bagi almamater dan masyarakat.
+                    Membangun ekosistem riset yang berintegritas dan menghasilkan karya nyata bagi almamater universitas.
                 </p>
             </div>
 
             <div class="profile-cards-grid">
-                <!-- Card 1: Penjelasan UKM -->
-                <div class="profile-card">
+                <div class="profile-card profile-card-clickable" data-open-modal="modalAbout" role="button" tabindex="0" aria-label="Buka Detail Tentang UKM R&D">
                     <div class="card-icon-header">
                         <i class="fas fa-microscope"></i>
                     </div>
                     <h3 data-lang-key="about_title">Tentang UKM R&amp;D</h3>
-                    <p data-lang-key="about_desc_1">
-                        Unit Kegiatan Mahasiswa <strong>Research &amp; Development (R&amp;D)</strong> Keluarga Mahasiswa Universitas Pancasila adalah organisasi kemahasiswaan independen yang berfokus pada penalaran ilmiah, penelitian interdisipliner, serta pengembangan produk teknologi dan sosial.
+                    <p data-lang-key="about_desc_preview">
+                        UKM bidang penelitian multidisiplin ilmu yang tanggap kemajuan teknologi, solutif bagi problematika sosial, dan aktif di event nasional &amp; internasional.
                     </p>
-                    <p data-lang-key="about_desc_2">
-                        Kami memfasilitasi mahasiswa dari berbagai fakultas untuk mengasah keahlian teknis, kepemimpinan proyek, dan publikasi karya ilmiah yang bermanfaat.
-                    </p>
+                    <div class="card-action-preview">
+                        <span class="btn-card-pop"><span data-lang-key="btn_read_more">Baca Selengkapnya</span> <i class="fas fa-arrow-right"></i></span>
+                    </div>
                 </div>
 
-                <!-- Card 2: Visi & Misi -->
-                <div class="profile-card">
+                <div class="profile-card profile-card-clickable" data-open-modal="modalVisiMisi" role="button" tabindex="0" aria-label="Buka Detail Visi & Misi">
                     <div class="card-icon-header">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3 data-lang-key="vm_title">Visi &amp; Misi</h3>
-                    <p data-lang-key="visi_text"><strong>Visi:</strong> Mewujudkan <span>Research and Development KMUP</span> sebagai wadah <span>inovasi</span> yang <span>progresif</span>, <span>kolaboratif</span>, dan <span>berdampak</span>, dengan mencetak anggota yang <span>kompeten</span> di bidang <span>teknologi</span>, <span>riset</span>, dan <span>pengembangan diri</span>.</p>
-                    
-                    <div class="misi-list">
-                        <div class="misi-item" data-lang-key="misi_1">
-                            <i class="fas fa-check-circle"></i>
-                            Mengembangkan personal branding anggota dengan memberikan kelas mingguan dan mengikutsertakan anggota dalam lomba-lomba inovatif.
-                        </div>
-                        <div class="misi-item" data-lang-key="misi_2">
-                            <i class="fas fa-check-circle"></i>
-                            Mendorong inovasi dan karya nyata, serta menghasilkan proyek teknologi, riset, atau produk digital.
-                        </div>
-                        <div class="misi-item" data-lang-key="misi_3">
-                            <i class="fas fa-check-circle"></i>
-                            Memperluas relasi dan peluang, membantu anggota memiliki portofolio yang jelas dan bernilai, serta menjalin kerja sama dengan pihak luar.
-                        </div>
+                    <p data-lang-key="visi_desc_preview">
+                        Mewujudkan wadah inovasi yang progresif, kolaboratif, dan berdampak dengan mencetak anggota yang kompeten.
+                    </p>
+                    <div class="card-action-preview">
+                        <span class="btn-card-pop"><span data-lang-key="btn_view_vm">Lihat Visi &amp; Misi</span> <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====================================================================
-         4. STRUKTUR ORGANISASI (MEMBERS SECTION)
-         ==================================================================== -->
-    <section class="section structure-section" id="struktur">
-        <div class="container">
-            <div class="section-title-wrap">
-                <span class="section-badge" data-lang-key="structure_badge">Kepengurusan</span>
-                <h2 class="section-title" data-lang-key="structure_title">Struktur Organisasi</h2>
-                <p class="section-subtitle" data-lang-key="structure_subtitle">
-                    Badan pengurus dan koordinator bidang yang berdedikasi menjalankan Program Kerja untuk mencapai tujuan Visi &amp; Misi.
-                </p>
-            </div>
-
-            <!-- Grid Member Card (Dikelola & Dirender dari data-struktur.js) -->
-            <div class="structure-grid" id="structureGrid">
-                <!-- Member cards dirender otomatis oleh script.js -->
             </div>
         </div>
     </section>
@@ -212,14 +169,13 @@
     <section class="section tabs-section" id="kegiatan">
         <div class="container">
             <div class="section-title-wrap">
-                <span class="section-badge" data-lang-key="tabs_badge">Eksplorasi Karya</span>
-                <h2 class="section-title" data-lang-key="tabs_title">Jurnal, Proker &amp; Project</h2>
+                <span class="section-badge" data-lang-key="tabs_badge">Eksplorasi R&D KMUP</span>
+                <h2 class="section-title" data-lang-key="tabs_title">Kegiatan &amp; Hasil Karya</h2>
                 <p class="section-subtitle" data-lang-key="tabs_subtitle">
                     Jelajahi publikasi ilmiah, program kerja berjalan, dan hasil riset teknologi UKM R&amp;D.
                 </p>
             </div>
 
-            <!-- Tab Navigation Buttons -->
             <div class="tab-nav-wrapper">
                 <div class="tab-nav-container">
                     <button class="tab-btn active" data-tab="jurnal">
@@ -234,23 +190,64 @@
                 </div>
             </div>
 
-            <!-- Tab 1: Jurnal -->
             <div class="tab-content-pane active" id="tab-jurnal">
-                <div class="dynamic-cards-grid" id="jurnalCardsGrid"></div>
+                <div class="cards-slider-wrapper">
+                    <button type="button" class="slider-arrow-btn slider-prev-btn" data-target="jurnalCardsGrid" aria-label="Geser ke Kiri">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="dynamic-cards-slider dynamic-cards-grid" id="jurnalCardsGrid"></div>
+                    <button type="button" class="slider-arrow-btn slider-next-btn" data-target="jurnalCardsGrid" aria-label="Geser ke Kanan">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Tab 2: Proker -->
             <div class="tab-content-pane" id="tab-proker">
-                <div class="dynamic-cards-grid" id="prokerCardsGrid"></div>
+                <div class="cards-slider-wrapper">
+                    <button type="button" class="slider-arrow-btn slider-prev-btn" data-target="prokerCardsGrid" aria-label="Geser ke Kiri">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="dynamic-cards-slider dynamic-cards-grid" id="prokerCardsGrid"></div>
+                    <button type="button" class="slider-arrow-btn slider-next-btn" data-target="prokerCardsGrid" aria-label="Geser ke Kanan">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Tab 3: Project -->
             <div class="tab-content-pane" id="tab-project">
-                <div class="dynamic-cards-grid" id="projectCardsGrid"></div>
+                <div class="cards-slider-wrapper">
+                    <button type="button" class="slider-arrow-btn slider-prev-btn" data-target="projectCardsGrid" aria-label="Geser ke Kiri">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="dynamic-cards-slider dynamic-cards-grid" id="projectCardsGrid"></div>
+                    <button type="button" class="slider-arrow-btn slider-next-btn" data-target="projectCardsGrid" aria-label="Geser ke Kanan">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
+
+    <!-- ====================================================================
+         4. STRUKTUR ORGANISASI (MEMBERS SECTION)
+         ==================================================================== -->
+    <section class="section structure-section" id="struktur">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-badge" data-lang-key="structure_badge">Kepengurusan</span>
+                <h2 class="section-title" data-lang-key="structure_title">Struktur Organisasi Periode 2025/2026</h2>
+                <p class="section-subtitle" data-lang-key="structure_subtitle">
+                    Badan pengurus dan koordinator bidang yang berdedikasi menjalankan Program Kerja untuk mencapai tujuan Visi &amp; Misi.
+                </p>
+            </div>
+
+            <div class="structure-grid" id="structureGrid">
+            </div>
+        </div>
+    </section>
+
+    
     <!-- ====================================================================
          6. CALL TO ACTION (CTA)
          ==================================================================== -->
@@ -270,6 +267,84 @@
     </section>
 
     <!-- ====================================================================
+         7A. POPUP MODALS: TENTANG UKM R&D & VISI MISI
+         ==================================================================== -->
+    <div class="modal-overlay profile-popup-modal" id="modalAbout">
+        <div class="modal-box modal-box-profile">
+            <div class="modal-header">
+                <div class="modal-header-tag" data-lang-key="profile_badge">Profil Organisasi</div>
+                <h3 class="modal-title" data-lang-key="about_title">Tentang UKM R&amp;D</h3>
+                <button class="modal-close-btn close-profile-modal" aria-label="Tutup Form">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body profile-modal-body">
+                <div class="profile-modal-icon-badge">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <h4 class="profile-modal-heading">UKM Research &amp; Development KMUP</h4>
+                <p class="profile-modal-paragraph" data-lang-key="about_desc_1">
+                    Unit Kegiatan Mahasiswa <strong>Research and Development</strong> Keluarga Mahasiswa Universitas Pancasila atau disingkat <strong>UKM R&amp;D KMUP</strong> adalah UKM yang bergerak di bidang penelitian. UKM R&amp;D ini berdiri atas dasar sekelompok mahasiswa yang ingin mengembangkan keilmuannya yang terdiri dari keberagaman disiplin ilmu dengan mengikuti segala event nasional dan internasional.
+                </p>
+                <p class="profile-modal-paragraph" data-lang-key="about_desc_2">
+                    UKM R&amp;D ini memiliki visi sebagai wadah riset keilmuan yang tanggap kemajuan teknologi dan peka terhadap problematika sosial masyarakat sehingga mampu memberikan solusi nyata dengan mengaitkan pada aplikasi-aplikasi teknologi yang efektif dan efisien. Untuk mencapai tujuan tersebut, UKM R&amp;D memiliki misi menjadi tempat pengembangan intelektualitas mahasiswa dalam penelitian, pembuatan, dan penerapan teknologi yang berpedoman Tri Dharma Perguruan Tinggi. Selain itu, UKM R&amp;D juga memiliki misi sebagai media penerapan bidang-bidang keilmuan dengan menyelaraskan pada teori yang diperoleh saat kuliah, dan masih banyak lagi.
+                </p>
+                <div class="profile-modal-action">
+                    <button type="button" class="btn-modal-close-custom close-profile-modal">
+                        <span data-lang-key="btn_close">Tutup Jendela</span> <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay profile-popup-modal" id="modalVisiMisi">
+        <div class="modal-box modal-box-profile">
+            <div class="modal-header">
+                <div class="modal-header-tag" data-lang-key="profile_badge">Arah &amp; Nilai Organisasi</div>
+                <h3 class="modal-title" data-lang-key="vm_title">Visi &amp; Misi</h3>
+                <button class="modal-close-btn close-profile-modal" aria-label="Tutup Form">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body profile-modal-body">
+                <div class="profile-modal-icon-badge">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                
+                <div class="visi-modal-box">
+                    <div class="visi-modal-tag"><i class="fas fa-eye"></i> VISI</div>
+                    <p class="visi-modal-text" data-lang-key="visi_text">
+                        Mewujudkan <span>Research and Development KMUP</span> sebagai wadah <span>inovasi</span> yang <span>progresif</span>, <span>kolaboratif</span>, dan <span>berdampak</span>, dengan mencetak anggota yang <span>kompeten</span> di bidang <span>teknologi</span>, <span>riset</span>, dan <span>pengembangan diri</span>.
+                    </p>
+                </div>
+
+                <div class="misi-modal-heading"><i class="fas fa-tasks"></i> MISI ORGANISASI</div>
+                <div class="misi-list">
+                    <div class="misi-item" data-lang-key="misi_1">
+                        <i class="fas fa-check-circle"></i>
+                        Mengembangkan personal branding anggota dengan memberikan kelas mingguan dan mengikutsertakan anggota dalam lomba-lomba inovatif.
+                    </div>
+                    <div class="misi-item" data-lang-key="misi_2">
+                        <i class="fas fa-check-circle"></i>
+                        Mendorong inovasi dan karya nyata, serta menghasilkan proyek teknologi, riset, atau produk digital.
+                    </div>
+                    <div class="misi-item" data-lang-key="misi_3">
+                        <i class="fas fa-check-circle"></i>
+                        Memperluas relasi dan peluang, membantu anggota memiliki portofolio yang jelas dan bernilai, serta menjalin kerja sama dengan pihak luar.
+                    </div>
+                </div>
+
+                <div class="profile-modal-action">
+                    <button type="button" class="btn-modal-close-custom close-profile-modal">
+                        <span data-lang-key="btn_close">Tutup Jendela</span> <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
          7. 2-STEP REGISTRATION MODAL ("IMPROVE YOUR KNOWLEDGE")
          ==================================================================== -->
     <div class="modal-overlay" id="registrationModal">
@@ -283,22 +358,21 @@
             </div>
 
             <div class="modal-body">
-                <!-- STEP 1: FORM INPUT -->
                 <div class="form-step active" id="modalStep1">
                     <form id="registrationForm">
                         <div class="form-group">
                             <label class="form-label" for="regNama"><span data-lang-key="form_nama">Nama Lengkap</span> <span>*</span></label>
-                            <input type="text" id="regNama" class="form-control" placeholder="Masukkan nama lengkap" required>
+                            <input type="text" id="regNama" class="form-control" data-lang-placeholder="ph_nama" placeholder="Masukkan nama lengkap" required>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="regNpm"><span>NPM / NIM</span> <span>*</span></label>
-                            <input type="text" id="regNpm" class="form-control" placeholder="Contoh: 4524210025" required>
+                            <input type="text" id="regNpm" class="form-control" data-lang-placeholder="ph_npm" placeholder="Contoh: 4527210025" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="regFakultas"><span data-lang-key="form_fakultas">Fakultas</span> <span>*</span></label>
-                            <select id="regFakultas" class="form-control" required>
+                            <select id="regFakultas" class="form-control" onchange="updateProdiOptions()" oninput="updateProdiOptions()" required>
                                 <option value="" disabled selected data-lang-key="opt_select_fakultas">Pilih Fakultas</option>
                                 <option value="Fakultas Teknik">Fakultas Teknik</option>
                                 <option value="Fakultas Farmasi">Fakultas Farmasi</option>
@@ -312,12 +386,47 @@
 
                         <div class="form-group">
                             <label class="form-label" for="regProdi"><span data-lang-key="form_prodi">Program Studi</span> <span>*</span></label>
-                            <input type="text" id="regProdi" class="form-control" placeholder="Contoh: Teknik Informatika" required>
+                            <select id="regProdi" class="form-control" required>
+                                <option value="" disabled selected data-lang-key="opt_select_prodi">-- Pilih Program Studi --</option>
+                                <optgroup label="Fakultas Teknik" data-fakultas="teknik">
+                                    <option value="S1 - Arsitektur">S1 - Arsitektur</option>
+                                    <option value="S1 - Teknik Sipil">S1 - Teknik Sipil</option>
+                                    <option value="S1 - Teknik Mesin">S1 - Teknik Mesin</option>
+                                    <option value="S1 - Teknik Industri">S1 - Teknik Industri</option>
+                                    <option value="S1 - Teknik Informatika">S1 - Teknik Informatika</option>
+                                    <option value="S1 - Teknik Elektro">S1 - Teknik Elektro</option>
+                                    <option value="S1 - Teknik Perkeretaapian">S1 - Teknik Perkeretaapian</option>
+                                    <option value="D3 - Teknik Mesin">D3 - Teknik Mesin</option>
+                                    <option value="D3 - Teknik Elektro">D3 - Teknik Elektro</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Farmasi" data-fakultas="farmasi">
+                                    <option value="S1 - Farmasi">S1 - Farmasi</option>
+                                    <option value="D3 - Farmasi">D3 - Farmasi</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Ekonomi dan Bisnis" data-fakultas="ekonomi">
+                                    <option value="S1 - Manajemen">S1 - Manajemen</option>
+                                    <option value="S1 - Akuntansi">S1 - Akuntansi</option>
+                                    <option value="D3 - Akuntansi">D3 - Akuntansi</option>
+                                    <option value="D3 - Perpajakan">D3 - Perpajakan</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Hukum" data-fakultas="hukum">
+                                    <option value="S1 - Ilmu Hukum">S1 - Ilmu Hukum</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Ilmu Komunikasi" data-fakultas="komunikasi">
+                                    <option value="S1 - Ilmu Komunikasi">S1 - Ilmu Komunikasi</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Psikologi" data-fakultas="psikologi">
+                                    <option value="S1 - Psikologi">S1 - Psikologi</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Pariwisata" data-fakultas="pariwisata">
+                                    <option value="S1 - Pariwisata">S1 - Pariwisata</option>
+                                </optgroup>
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="regWa"><span data-lang-key="form_wa">Nomor WhatsApp</span> <span>*</span></label>
-                            <input type="tel" id="regWa" class="form-control" placeholder="Contoh: 081234567890" required>
+                            <input type="tel" id="regWa" class="form-control" data-lang-placeholder="ph_wa" placeholder="Contoh: 081234567890" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                         </div>
 
                         <button type="submit" class="btn-submit-step" id="btnSubmitForm">
@@ -326,7 +435,6 @@
                     </form>
                 </div>
 
-                <!-- STEP 2: SUKSES & LINK GRUP WA -->
                 <div class="form-step" id="modalStep2">
                     <div class="success-screen">
                         <div class="success-icon-wrap">
@@ -362,7 +470,7 @@
                         </div>
                     </a>
                     <p data-lang-key="footer_desc">
-                        Unit Kegiatan Mahasiswa Research &amp; Development KM Universitas Pancasila. Membina generasi muda berdaya saing dalam riset dan teknologi.
+                        Unit Kegiatan Mahasiswa Research &amp; Development Universitas Pancasila. Membina generasi muda berdaya saing dalam riset dan teknologi.
                     </p>
                 </div>
 
@@ -373,7 +481,7 @@
                         <a href="#home" data-lang-key="nav_home">Home</a>
                         <a href="#profile" data-lang-key="drawer_profile">Visi &amp; Misi</a>
                         <a href="#struktur" data-lang-key="drawer_struktur">Struktur Organisasi</a>
-                        <a href="#kegiatan" data-lang-key="drawer_kegiatan">Jurnal &amp; Riset</a>
+                        <a href="#kegiatan" data-lang-key="drawer_kegiatan">Kegiatan & Hasil Karya</a>
                     </div>
                 </div>
 
@@ -387,7 +495,6 @@
                     </div>
                 </div>
 
-                <!-- Col 4: Kontak & Alamat -->
                 <div class="footer-col">
                     <h5 data-lang-key="footer_contact_heading">Sekretariat</h5>
                     <div class="footer-contact-item">
@@ -396,7 +503,8 @@
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>rndpancasila@univpancasila.ac.id</span>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rndpancasila@univpancasila.ac.id" target="_blank"
+                                 class="footer-contact-link" title="Kirim Email ke UKM R&D KMUP">rndpancasila@univpancasila.ac.id</a>
                     </div>
                 </div>
             </div>

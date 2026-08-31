@@ -93,7 +93,7 @@ const RND_DATA = {
                         jabatan: { id: "ANGGOTA BIDANG 1", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang1/Koi.jpg",
                         instagram: "https://www.instagram.com/ahmad.khoiri2.0?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: "https://www.linkedin.com/in/ahmad-khoiri-putranto-76abb4411/"
                     },
                     {
                         nama: "Muhammad Fathir Alfarqi",
@@ -123,7 +123,7 @@ const RND_DATA = {
                         jabatan: { id: "ANGGOTA BIDANG 2", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang2/Zaidan.jpg",
                         instagram: "https://www.instagram.com/neverz_z?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: " https://www.linkedin.com/in/zaidan-dziaulfawwaz-86319136b"
                     },
                     {
                         nama: "Aryan Faathir Asq Gunawan",
@@ -175,7 +175,7 @@ const RND_DATA = {
                         sub: { id: "Bidang Publikasi", en: "Publication Division" },
                         foto: "./Gambar/Bidang4/Elin.jpg",
                         instagram: "https://www.instagram.com/ryleaan?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: " https://www.linkedin.com/in/herlyana-ferdiani-22786236a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                     },
                     {
                         nama: "Naila Putri Fahel",
@@ -184,7 +184,7 @@ const RND_DATA = {
                         sub: { id: "Bidang Publikasi", en: "Publication Division" },
                         foto: "./Gambar/Bidang4/Naila.jpg",
                         instagram: "https://www.instagram.com/nailafahel?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: "https://www.linkedin.com/in/nailaputrifahel"
                        
                     },
                     {
@@ -194,7 +194,7 @@ const RND_DATA = {
                         sub: { id: "Bidang Inventaris", en: "Inventory Division" },
                         foto: "./Gambar/Bidang4/Alfin.jpg",
                         instagram: "https://www.instagram.com/alfinromi1?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
-                        linkedin: "#"
+                        linkedin: "https://www.linkedin.com/in/alfin-romi-setiawan-a9494a346?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                     }
                 ]
             }
