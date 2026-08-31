@@ -157,7 +157,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Soja Purnamasari",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: "Teknik Informatika'23",
                         jabatan: { id: "ANGGOTA BIDANG 3", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang3/Soja.jpg",
                         instagram: "https://www.instagram.com/moonsojaa?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -189,7 +189,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Alfin Romi Setiawan",
-                        jurusan: "Teknik Informatika'23",
+                        jurusan: "Teknik Informatika'24",
                         jabatan: { id: "ANGGOTA BIDANG 4", en: "DIVISION MEMBER" },
                         sub: { id: "Bidang Inventaris", en: "Inventory Division" },
                         foto: "./Gambar/Bidang4/Alfin.jpg",
