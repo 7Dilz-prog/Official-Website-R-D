@@ -93,6 +93,36 @@ const translations = {
         success_desc: "Data pendaftaranmu berhasil tersimpan. Silakan klik tombol di bawah untuk bergabung ke WhatsApp Group resmi calon anggota UKM R&D.",
         btn_join_wa: "Masuk Link Grup WA",
 
+        // Opsi Fakultas
+        fakultas_ft: "Fakultas Teknik",
+        fakultas_ff: "Fakultas Farmasi",
+        fakultas_feb: "Fakultas Ekonomi dan Bisnis",
+        fakultas_fh: "Fakultas Hukum",
+        fakultas_fik: "Fakultas Ilmu Komunikasi",
+        fakultas_fps: "Fakultas Psikologi",
+        fakultas_fp: "Fakultas Pariwisata",
+
+        // Opsi Program Studi
+        prodi_s1_arsitektur: "S1 - Arsitektur",
+        prodi_s1_sipil: "S1 - Teknik Sipil",
+        prodi_s1_mesin: "S1 - Teknik Mesin",
+        prodi_s1_industri: "S1 - Teknik Industri",
+        prodi_s1_informatika: "S1 - Teknik Informatika",
+        prodi_s1_elektro: "S1 - Teknik Elektro",
+        prodi_s1_perkeretaapian: "S1 - Teknik Perkeretaapian",
+        prodi_d3_mesin: "D3 - Teknik Mesin",
+        prodi_d3_elektro: "D3 - Teknik Elektro",
+        prodi_s1_farmasi: "S1 - Farmasi",
+        prodi_d3_farmasi: "D3 - Farmasi",
+        prodi_s1_manajemen: "S1 - Manajemen",
+        prodi_s1_akuntansi: "S1 - Akuntansi",
+        prodi_d3_akuntansi: "D3 - Akuntansi",
+        prodi_d3_perpajakan: "D3 - Perpajakan",
+        prodi_s1_hukum: "S1 - Ilmu Hukum",
+        prodi_s1_komunikasi: "S1 - Ilmu Komunikasi",
+        prodi_s1_psikologi: "S1 - Psikologi",
+        prodi_s1_pariwisata: "S1 - Pariwisata",
+
         footer_desc: "Unit Kegiatan Mahasiswa Research & Development Universitas Pancasila. Membina generasi muda berdaya saing dalam riset dan teknologi.",
         footer_nav_heading: "Navigasi",
         footer_act_heading: "Aktivitas",
@@ -166,6 +196,36 @@ const translations = {
         success_desc: "Your registration data has been submitted successfully. Please click the button below to join our official WhatsApp Group for new members.",
         btn_join_wa: "Join WhatsApp Group",
 
+        // Faculty Options (EN)
+        fakultas_ft: "Faculty of Engineering",
+        fakultas_ff: "Faculty of Pharmacy",
+        fakultas_feb: "Faculty of Economics & Business",
+        fakultas_fh: "Faculty of Law",
+        fakultas_fik: "Faculty of Communication Sciences",
+        fakultas_fps: "Faculty of Psychology",
+        fakultas_fp: "Faculty of Tourism",
+
+        // Study Program Options (EN)
+        prodi_s1_arsitektur: "S1 - Architecture",
+        prodi_s1_sipil: "S1 - Civil Engineering",
+        prodi_s1_mesin: "S1 - Mechanical Engineering",
+        prodi_s1_industri: "S1 - Industrial Engineering",
+        prodi_s1_informatika: "S1 - Informatics Engineering",
+        prodi_s1_elektro: "S1 - Electrical Engineering",
+        prodi_s1_perkeretaapian: "S1 - Railway Engineering",
+        prodi_d3_mesin: "D3 - Mechanical Engineering",
+        prodi_d3_elektro: "D3 - Electrical Engineering",
+        prodi_s1_farmasi: "S1 - Pharmacy",
+        prodi_d3_farmasi: "D3 - Pharmacy",
+        prodi_s1_manajemen: "S1 - Management",
+        prodi_s1_akuntansi: "S1 - Accounting",
+        prodi_d3_akuntansi: "D3 - Accounting",
+        prodi_d3_perpajakan: "D3 - Taxation",
+        prodi_s1_hukum: "S1 - Legal Studies / Law",
+        prodi_s1_komunikasi: "S1 - Communication Studies",
+        prodi_s1_psikologi: "S1 - Psychology",
+        prodi_s1_pariwisata: "S1 - Tourism",
+
         footer_desc: "Research & Development Student Club of Pancasila University. Nurturing competitive future leaders in research and technology.",
         footer_nav_heading: "Navigation",
         footer_act_heading: "Activities",
@@ -195,6 +255,14 @@ function setLanguage(lang) {
         const key = element.getAttribute("data-lang-placeholder");
         if (translations[lang] && translations[lang][key]) {
             element.setAttribute("placeholder", translations[lang][key]);
+        }
+    });
+
+    // 1c. Ganti label optgroup yang memiliki atribut data-lang-label-key
+    document.querySelectorAll("[data-lang-label-key]").forEach(element => {
+        const key = element.getAttribute("data-lang-label-key");
+        if (translations[lang] && translations[lang][key]) {
+            element.label = translations[lang][key];
         }
     });
 
@@ -350,7 +418,7 @@ function renderStructureMembers(lang = "id") {
             <div class="member-info">
                 <h3 class="member-name">${m.nama}</h3>
                 <span class="member-role">${getText(m.jabatan, lang)}</span>
-                ${m.jurusan ? `<span class="member-major">${m.jurusan}</span>` : ""}
+                ${m.jurusan ? `<span class="member-major">${getText(m.jurusan, lang)}</span>` : ""}
                 <div class="member-socials">
                     ${m.instagram && m.instagram !== "#" ? `<a href="${m.instagram}" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
                     ${m.linkedin && m.linkedin !== "#" ? `<a href="${m.linkedin}" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>` : ""}
@@ -443,7 +511,8 @@ function renderDynamicTabs(lang = "id") {
     const jurnalContainer = document.getElementById("jurnalCardsGrid");
     if (jurnalContainer) {
         if (RND_DATA.journals && RND_DATA.journals.length > 0) {
-            jurnalContainer.innerHTML = RND_DATA.journals.map(item => `
+            const sortedJournals = [...RND_DATA.journals].reverse();
+            jurnalContainer.innerHTML = sortedJournals.map(item => `
                 <div class="dynamic-card">
                     <div class="card-badge">${getText(item.badge, lang)}</div>
                     <h4 class="card-title">${getText(item.title, lang)}</h4>
@@ -464,7 +533,8 @@ function renderDynamicTabs(lang = "id") {
     const prokerContainer = document.getElementById("prokerCardsGrid");
     if (prokerContainer) {
         if (RND_DATA.prokers && RND_DATA.prokers.length > 0) {
-            prokerContainer.innerHTML = RND_DATA.prokers.map(item => {
+            const sortedProkers = [...RND_DATA.prokers].reverse();
+            prokerContainer.innerHTML = sortedProkers.map(item => {
                 let imgUrl = item.image;
                 if (!imgUrl && typeof item.description?.en === "string" && (item.description.en.includes("drive.google.com") || item.description.en.includes("http"))) {
                     imgUrl = item.description.en;
@@ -507,7 +577,8 @@ function renderDynamicTabs(lang = "id") {
     const projectContainer = document.getElementById("projectCardsGrid");
     if (projectContainer) {
         if (RND_DATA.projects && RND_DATA.projects.length > 0) {
-            projectContainer.innerHTML = RND_DATA.projects.map(item => {
+            const sortedProjects = [...RND_DATA.projects].reverse();
+            projectContainer.innerHTML = sortedProjects.map(item => {
                 const cleanImg = formatImageUrl(item.image);
                 const techList = Array.isArray(item.tech) ? item.tech : (typeof item.tech === "string" ? item.tech.split(",") : []);
                 const cleanDesc = getText(item.description, lang);
@@ -761,15 +832,19 @@ function initRegistrationModal() {
         const prodiElem = document.getElementById("regProdi");
         if (!fakultasElem || !prodiElem) return;
 
-        const val = (fakultasElem.value || "").toLowerCase();
-        let targetKey = "";
-        if (val.includes("teknik")) targetKey = "teknik";
-        else if (val.includes("farmasi")) targetKey = "farmasi";
-        else if (val.includes("ekonomi") || val.includes("bisnis")) targetKey = "ekonomi";
-        else if (val.includes("hukum")) targetKey = "hukum";
-        else if (val.includes("komunikasi")) targetKey = "komunikasi";
-        else if (val.includes("psikologi")) targetKey = "psikologi";
-        else if (val.includes("pariwisata")) targetKey = "pariwisata";
+        const selectedOption = fakultasElem.options[fakultasElem.selectedIndex];
+        let targetKey = selectedOption ? (selectedOption.getAttribute("data-fakultas-key") || "") : "";
+
+        if (!targetKey) {
+            const val = (fakultasElem.value || "").toLowerCase();
+            if (val.includes("teknik") || val.includes("engineering")) targetKey = "teknik";
+            else if (val.includes("farmasi") || val.includes("pharmacy")) targetKey = "farmasi";
+            else if (val.includes("ekonomi") || val.includes("bisnis") || val.includes("economic") || val.includes("business")) targetKey = "ekonomi";
+            else if (val.includes("hukum") || val.includes("law")) targetKey = "hukum";
+            else if (val.includes("komunikasi") || val.includes("communication")) targetKey = "komunikasi";
+            else if (val.includes("psikologi") || val.includes("psychology")) targetKey = "psikologi";
+            else if (val.includes("pariwisata") || val.includes("tourism")) targetKey = "pariwisata";
+        }
 
         const optgroups = prodiElem.querySelectorAll("optgroup");
         if (optgroups && optgroups.length > 0) {

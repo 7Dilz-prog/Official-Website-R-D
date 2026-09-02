@@ -716,8 +716,8 @@ img {
     padding: 40px;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                box-shadow 0.45s ease, 
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
                 border-color 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -737,41 +737,20 @@ img {
     transition: var(--transition-fast);
 }
 
+/* Card 1 (Tentang UKM): Posisi Miring 3D ke Kiri */
 .profile-card:nth-child(1) {
     transform: perspective(1000px) rotateY(6deg) rotateX(4deg) rotateZ(-2.5deg);
-    animation: floatCardLeft 5s ease-in-out infinite;
 }
 
-/* Card 2 (Visi & Misi): Miring ke kanan + Floating */
+/* Card 2 (Visi & Misi): Posisi Miring 3D ke Kanan */
 .profile-card:nth-child(2) {
     transform: perspective(1000px) rotateY(-6deg) rotateX(4deg) rotateZ(2.5deg);
-    animation: floatCardRight 5s ease-in-out infinite 0.8s;
 }
 
-/* Animasi Ngambang (Floating Effect) */
-@keyframes floatCardLeft {
-    0%, 100% {
-        transform: perspective(1000px) rotateY(6deg) rotateX(4deg) rotateZ(-2.5deg) translateY(0px);
-    }
-    50% {
-        transform: perspective(1000px) rotateY(7.5deg) rotateX(2deg) rotateZ(-2deg) translateY(-14px);
-    }
-}
-
-@keyframes floatCardRight {
-    0%, 100% {
-        transform: perspective(1000px) rotateY(-6deg) rotateX(4deg) rotateZ(2.5deg) translateY(0px);
-    }
-    50% {
-        transform: perspective(1000px) rotateY(-7.5deg) rotateX(2deg) rotateZ(2deg) translateY(-14px);
-    }
-}
-
-/* Efek Hover: Pop Up, tegak lurus, membesar dan menonjol ke depan */
+/* Efek Hover: Berdiri tegak lurus secara sangat halus & lembut (smooth), pop-up ke depan */
 .profile-card:hover {
-    animation: none !important;
-    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-14px) scale(1.03) !important;
-    box-shadow: 0 28px 55px rgba(0, 0, 0, 0.16), 0 0 25px rgba(229, 37, 42, 0.18) !important;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-14px) scale(1.03);
+    box-shadow: 0 28px 55px rgba(0, 0, 0, 0.16), 0 0 25px rgba(229, 37, 42, 0.18);
     border-color: rgba(229, 37, 42, 0.35);
     z-index: 10;
 }

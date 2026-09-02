@@ -47,7 +47,7 @@ const RND_DATA = {
     strukturOrganisasi: {
         ketua: {
             nama: "Fircan Ferdinand",
-            jurusan: "Teknik Informatika'23",
+            jurusan: {"id": "Teknik Informatika'23", "en": "Informatics Engineering'23"},
             jabatan: { id: "KETUA UMUM", en: "PRESIDENT / LEADER" },
             foto: "./Gambar/BPH/Ketua.jpg",
             instagram: "https://www.instagram.com/frcanan_?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -56,7 +56,7 @@ const RND_DATA = {
         bph: [
             {
                 nama: "Az-Zahra Putri",
-                jurusan: "Teknik Informatika'24",
+                jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                 jabatan: { id: "SEKRETARIS UMUM", en: "GENERAL SECRETARY" },
                 sub: { id: "Badan Pengurus Harian (BPH)", en: "Central Executive Board" },
                 foto: "./Gambar/BPH/Sekre.jpg",
@@ -65,7 +65,7 @@ const RND_DATA = {
             },
             {
                 nama: "Delsyad Iza",
-                jurusan: "Teknik Informatika'24",
+                jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                 jabatan: { id: "WAKIL KETUA", en: "VICE PRESIDENT" },
                 sub: { id: "Badan Pengurus Harian (BPH)", en: "Central Executive Board" },
                 foto: "./Gambar/BPH/Wakil.jpeg",
@@ -75,7 +75,7 @@ const RND_DATA = {
             },
             {
                 nama: "Belvaria Hendriyani",
-                jurusan: "Teknik Informatika'24",
+                jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                 jabatan: { id: "BENDAHARA UMUM", en: "GENERAL TREASURER" },
                 sub: { id: "Badan Pengurus Harian (BPH)", en: "Central Executive Board" },
                 foto: "./Gambar/BPH/Bendum.jpg",
@@ -89,7 +89,7 @@ const RND_DATA = {
                 anggota: [
                     {
                        nama: "Ahmad Khoiri Putranto",
-                        jurusan: "Teknik Informatika'23",
+                        jurusan: {"id": "Teknik Informatika'23", "en": "Informatics Engineering'23"},
                         jabatan: { id: "ANGGOTA BIDANG 1", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang1/Koi.jpg",
                         instagram: "https://www.instagram.com/ahmad.khoiri2.0?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -97,7 +97,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Muhammad Fathir Alfarqi",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "KETUA BIDANG (KABID)", en: "HEAD OF DIVISION" },
                         foto: "./Gambar/Bidang1/Fathir.jpg",
                         instagram: "https://www.instagram.com/fathir.alf?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -106,7 +106,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Inna Lutfiah Fatih",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "ANGGOTA BIDANG 1", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang1/Inna.jpg",
                         instagram: "https://www.instagram.com/theannaliebe?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -119,7 +119,7 @@ const RND_DATA = {
                 anggota: [
                     {
                         nama: "Zaidan Dziaulfawwaz",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "ANGGOTA BIDANG 2", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang2/Zaidan.jpg",
                         instagram: "https://www.instagram.com/neverz_z?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -127,7 +127,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Aryan Faathir Asq Gunawan",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "KETUA BIDANG (KABID)", en: "HEAD OF DIVISION" },
                         foto: "./Gambar/Bidang2/Aryan.jpg",
                         instagram: "https://www.instagram.com/aryanaasq?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -136,7 +136,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Muhammad Al-Fatih",
-                        jurusan: "Teknik Informatika'23",
+                        jurusan: {"id": "Teknik Informatika'23", "en": "Informatics Engineering'23"},
                         jabatan: { id: "ANGGOTA BIDANG 2", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang2/Fatih.jpg",
                         instagram: "https://www.instagram.com/alfatihhhg?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -149,7 +149,7 @@ const RND_DATA = {
                 anggota: [
                     {
                         nama: "Devica Putri Hadiyanti",
-                        jurusan: "Teknik Informatika'23",
+                        jurusan: {"id": "Teknik Informatika'23", "en": "Informatics Engineering'23"},
                         jabatan: { id: "KETUA BIDANG (KABID)", en: "HEAD OF DIVISION" },
                         foto: "./Gambar/Bidang3/Vika.jpg",
                         instagram: "https://www.instagram.com/devicaaputri?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -157,7 +157,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Soja Purnamasari",
-                        jurusan: "Teknik Informatika'23",
+                        jurusan: {"id": "Teknik Informatika'23", "en": "Informatics Engineering'23"},
                         jabatan: { id: "ANGGOTA BIDANG 3", en: "DIVISION MEMBER" },
                         foto: "./Gambar/Bidang3/Soja.jpg",
                         instagram: "https://www.instagram.com/moonsojaa?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==",
@@ -170,7 +170,7 @@ const RND_DATA = {
                 anggota: [
                     {
                         nama: "Herlyana Ferdiani",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "ANGGOTA BIDANG 4", en: "DIVISION MEMBER" },
                         sub: { id: "Bidang Publikasi", en: "Publication Division" },
                         foto: "./Gambar/Bidang4/Elin.jpg",
@@ -179,7 +179,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Naila Putri Fahel",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "KETUA BIDANG (KABID)", en: "HEAD OF DIVISION" },
                         sub: { id: "Bidang Publikasi", en: "Publication Division" },
                         foto: "./Gambar/Bidang4/Naila.jpg",
@@ -189,7 +189,7 @@ const RND_DATA = {
                     },
                     {
                         nama: "Alfin Romi Setiawan",
-                        jurusan: "Teknik Informatika'24",
+                        jurusan: {"id": "Teknik Informatika'24", "en": "Informatics Engineering'24"},
                         jabatan: { id: "ANGGOTA BIDANG 4", en: "DIVISION MEMBER" },
                         sub: { id: "Bidang Inventaris", en: "Inventory Division" },
                         foto: "./Gambar/Bidang4/Alfin.jpg",
