@@ -580,13 +580,7 @@ function renderDynamicTabs(lang = "id") {
             const sortedProjects = [...RND_DATA.projects].reverse();
             projectContainer.innerHTML = sortedProjects.map(item => {
                 const cleanImg = formatImageUrl(item.image);
-                const techList = Array.isArray(item.tech) ? item.tech : (typeof item.tech === "string" ? item.tech.split(",") : []);
                 const cleanDesc = getText(item.description, lang);
-                // Hanya tampilkan tech-tag yang berupa nama teknologi singkat (bukan kalimat deskripsi panjang)
-                const validTechTags = techList.filter(t => {
-                    const tag = String(t).trim();
-                    return tag.length > 0 && tag.length <= 35 && tag !== cleanDesc;
-                });
 
                 if (cleanImg) {
                     return `
@@ -602,10 +596,6 @@ function renderDynamicTabs(lang = "id") {
                                     <span><i class="fas fa-calendar-alt"></i> ${formatDateText(item.date || item.timeline, lang)}</span>
                                 </div>` : ""}
                                 <p class="card-desc">${cleanDesc}</p>
-                                ${validTechTags.length > 0 ? `
-                                <div class="tech-stack">
-                                    ${validTechTags.map(t => `<span class="tech-tag">${String(t).trim()}</span>`).join("")}
-                                </div>` : ""}
                             </div>
                         </div>
                     `;
@@ -619,10 +609,6 @@ function renderDynamicTabs(lang = "id") {
                                 <span><i class="fas fa-calendar-alt"></i> ${formatDateText(item.date || item.timeline, lang)}</span>
                             </div>` : ""}
                             <p class="card-desc">${cleanDesc}</p>
-                            ${validTechTags.length > 0 ? `
-                            <div class="tech-stack">
-                                ${validTechTags.map(t => `<span class="tech-tag">${String(t).trim()}</span>`).join("")}
-                            </div>` : ""}
                         </div>
                     `;
                 }
