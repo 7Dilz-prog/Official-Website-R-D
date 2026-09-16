@@ -87,6 +87,8 @@ const translations = {
         opt_select_prodi: "-- Pilih Program Studi --",
         form_wa: "Nomor WhatsApp",
         ph_wa: "Contoh: 081234567890",
+        form_kupon: "Kode Kupon / Redeem (Opsional)",
+        ph_kupon: "Contoh: RND2026 (Opsional)",
         btn_next: "Lanjut",
         btn_processing: "Memproses Data...",
         success_title: "Terima Kasih!",
@@ -190,6 +192,8 @@ const translations = {
         opt_select_prodi: "-- Select Study Program --",
         form_wa: "WhatsApp Number",
         ph_wa: "e.g. 081234567890",
+        form_kupon: "Coupon / Redeem Code (Optional)",
+        ph_kupon: "e.g. RND2026 (Optional)",
         btn_next: "Next",
         btn_processing: "Processing Data...",
         success_title: "Thank You!",
@@ -910,6 +914,7 @@ function initRegistrationModal() {
             fakultas: document.getElementById("regFakultas").value,
             prodi: document.getElementById("regProdi").value.trim(),
             whatsapp: document.getElementById("regWa").value.trim(),
+            kupon: document.getElementById("regKupon") ? (document.getElementById("regKupon").value.trim() || "-") : "-",
             timestamp: new Date().toLocaleString("id-ID")
         };
 

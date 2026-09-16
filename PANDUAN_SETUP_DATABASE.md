@@ -14,9 +14,9 @@ Buka Google Spreadsheet kamu yang sudah ada, lalu buat/pastikan ada 4 Tab (Sheet
 
 #### 1. Tab `Pendaftar` (Untuk Form Registrasi)
 Baris ke-1 (Header):
-| A1 | B1 | C1 | D1 | E1 | F1 |
-|---|---|---|---|---|---|
-| `Timestamp` | `Nama Lengkap` | `NPM` | `Fakultas` | `Program Studi` | `No WhatsApp` |
+| A1 | B1 | C1 | D1 | E1 | F1 | G1 |
+|---|---|---|---|---|---|---|
+| `Timestamp` | `Nama Lengkap` | `NPM` | `Fakultas` | `Program Studi` | `No WhatsApp` | `Kode Kupon` |
 
 ---
 
@@ -75,7 +75,8 @@ function doPost(e) {
       "'" + data.npm,
       data.fakultas,
       data.prodi,
-      "'" + data.whatsapp
+      "'" + data.whatsapp,
+      data.kupon || "-"
     ]);
     
     return ContentService
