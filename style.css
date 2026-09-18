@@ -542,6 +542,14 @@ img {
     margin-bottom: 50px;
 }
 
+.hero-btn-desktop {
+    display: inline-flex !important;
+}
+
+.hero-btn-mobile {
+    display: none !important;
+}
+
 .btn-primary {
     background: var(--primary-red);
     color: #FFF;
@@ -1497,6 +1505,14 @@ img {
     margin: 0 auto;
 }
 
+.cta-box-desktop {
+    display: block !important;
+}
+
+.cta-box-mobile {
+    display: none !important;
+}
+
 .cta-title {
     font-size: 2.6rem;
     font-weight: 900;
@@ -1508,6 +1524,15 @@ img {
     font-size: 1.15rem;
     color: var(--text-white-muted);
     margin-bottom: 35px;
+}
+
+.explore-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -1913,6 +1938,47 @@ select.form-control option {
     }
 }
 
+@media (max-width: 768px) {
+    /* Hero Buttons Responsive (Mobile & Tablet) */
+    .hero-btn-desktop {
+        display: none !important;
+    }
+
+    .hero-btn-mobile {
+        display: inline-flex !important;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 15px 28px;
+        font-size: 1.02rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /* Toggle CTA: Desktop Registration vs Mobile Explore */
+    .cta-box-desktop {
+        display: none !important;
+    }
+
+    .cta-box-mobile {
+        display: block !important;
+    }
+
+    /* Explore Section Actions Responsive */
+    .explore-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        gap: 14px;
+    }
+
+    .explore-actions .btn-primary,
+    .explore-actions .btn-linkedin {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 640px) {
     .section {
         padding: 60px 0;
@@ -1955,6 +2021,9 @@ select.form-control option {
         width: 100%;
         justify-content: center;
         padding: 10px;
+    }
+        width: 100%;
+        justify-content: center;
     }
 
     /* Mobile: 1 Card per view */

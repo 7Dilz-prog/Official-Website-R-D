@@ -111,14 +111,20 @@
                 unggul, serta berdaya saing global.
             </p>
             <div class="hero-actions">
+                <!-- Tombol Desktop: Instagram & LinkedIn -->
                 <a href="https://www.instagram.com/rnd_pancasila?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
-                    class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    class="btn-primary hero-btn-desktop" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i> <span data-lang-key="btn_hero_join">@rnd_pancasila</span>
                 </a>
-                <a href="https://www.linkedin.com/company/ukm-research-and-development-kmup/" class="btn-linkedin"
+                <a href="https://www.linkedin.com/company/ukm-research-and-development-kmup/" class="btn-linkedin hero-btn-desktop"
                     target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i> <span data-lang-key="btn_hero_linkedin">UKM R&amp;D KMUP</span>
                 </a>
+
+                <!-- Tombol Mobile: Pendaftaran Modal Trigger -->
+                <button type="button" class="btn-primary trigger-register-modal hero-btn-mobile">
+                    <i class="fas fa-edit"></i> <span data-lang-key="btn_hero_register">Daftar Sekarang</span>
+                </button>
             </div>
 
             <!-- Carousel Slide Indicator Dots -->
@@ -279,11 +285,12 @@
 
 
     <!-- ====================================================================
-         6. CALL TO ACTION (CTA)
+         6. CALL TO ACTION / EXPLORE (DESKTOP: PENDAFTARAN | MOBILE: EXPLORE SOCIAL)
          ==================================================================== -->
     <section class="section cta-section" id="daftar">
         <div class="container">
-            <div class="cta-box">
+            <!-- Versi Desktop: Call To Action Pendaftaran Anggota Tetap Seperti Semula -->
+            <div class="cta-box cta-box-desktop">
                 <span class="section-badge" style="background: rgba(229, 37, 42, 0.2); color: #FF6B6B;"
                     data-lang-key="cta_badge">Open Recruitment</span>
                 <h2 class="cta-title" data-lang-key="cta_title">Siap Menjadi Bagian dari Perubahan?</h2>
@@ -292,9 +299,28 @@
                     Development KMUP.
                 </p>
                 <button class="btn-primary trigger-register-modal" style="font-size: 1.1rem; padding: 18px 38px;">
-                    <i class="fas fa-edit"></i> <span data-lang-key="btn_cta_register">Daftar Sekarang (IMPROVE YOUR
-                        KNOWLEDGE)</span>
+                    <i class="fas fa-edit"></i> <span data-lang-key="btn_cta_register">Daftar Sekarang (IMPROVE YOUR KNOWLEDGE)</span>
                 </button>
+            </div>
+
+            <!-- Versi Mobile: Explore More About Us & Social Media Links -->
+            <div class="cta-box cta-box-mobile" id="explore">
+                <span class="section-badge" style="background: rgba(229, 37, 42, 0.2); color: #FF6B6B;"
+                    data-lang-key="explore_badge">Media Sosial &amp; Jaringan</span>
+                <h2 class="cta-title" data-lang-key="explore_title">Explore More About Us</h2>
+                <p class="cta-desc" data-lang-key="explore_desc">
+                    Ikuti perkembangan riset terbaru, dokumentasi kegiatan, dan prestasi mahasiswa melalui kanal media sosial resmi UKM R&amp;D KMUP.
+                </p>
+                <div class="explore-actions">
+                    <a href="https://www.instagram.com/rnd_pancasila?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
+                        class="btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i> <span data-lang-key="btn_explore_ig">@rnd_pancasila</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ukm-research-and-development-kmup/" class="btn-linkedin"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> <span data-lang-key="btn_explore_linkedin">UKM R&amp;D KMUP</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

@@ -42,6 +42,7 @@ const translations = {
         btn_hero_join: "@rnd_pancasila",
         btn_hero_linkedin: "UKM R&D KMUP",
         btn_hero_profile: "UKM R&D KMUP",
+        btn_hero_register: "Daftar Sekarang",
 
         profile_badge: "Profil Kami",
         profile_title: "Mengenal UKM R&D KMUP",
@@ -71,6 +72,13 @@ const translations = {
         tab_jurnal: "Jurnal Ilmiah",
         tab_proker: "Program Kerja",
         tab_project: "Projek Inovasi",
+
+        // Section Explore More About Us
+        explore_badge: "Media Sosial & Jaringan",
+        explore_title: "Explore More About Us",
+        explore_desc: "Ikuti perkembangan riset terbaru, dokumentasi kegiatan, dan prestasi mahasiswa melalui kanal media sosial resmi UKM R&D KMUP.",
+        btn_explore_ig: "@rnd_pancasila",
+        btn_explore_linkedin: "UKM R&D KMUP",
 
         cta_badge: "Pendaftaran Anggota Baru",
         cta_title: "Siap Menjadi Bagian dari Perubahan?",
@@ -147,6 +155,7 @@ const translations = {
         btn_hero_join: "@rnd_pancasila",
         btn_hero_linkedin: "UKM R&D KMUP",
         btn_hero_profile: "UKM R&D KMUP",
+        btn_hero_register: "Register Now",
 
         profile_badge: "Our Profile",
         profile_title: "Get to Know UKM R&D KMUP",
@@ -176,6 +185,13 @@ const translations = {
         tab_jurnal: "Scientific Journals",
         tab_proker: "Work Programs",
         tab_project: "Innovation Projects",
+
+        // Section Explore More About Us
+        explore_badge: "Social Media & Network",
+        explore_title: "Explore More About Us",
+        explore_desc: "Follow our latest research updates, activity documentation, and student achievements through our official channels.",
+        btn_explore_ig: "@rnd_pancasila",
+        btn_explore_linkedin: "UKM R&D KMUP",
 
         cta_badge: "Open Recruitment",
         cta_title: "Ready to Be Part of the Change?",
